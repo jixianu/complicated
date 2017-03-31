@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>城市选择-插件</title>
+    <script src="./jquery.min.js"></script>
+    <script src="index.js"></script>
+</head>
+<body>
+<input type="input" placeholder="中文/拼音" id="cityName"/>
+<script>
+    var citySelectPanel;
+    $('#cityName').on('click',function () {
+        if (!citySelectPanel) {
+            citySelectPanel = new CitySelectPanel({
+                'width':500,
+                'height':150,
+                'parent':$(this).parent()
+            })
+        }else{
+            citySelectPanel.show();
+        }
+    });
+    $(document).on('click',function (e) {
+        if ($(e.target).closest(".city-select-container").length === 0 && e.target.id != "cityName") {
+            //将城市选择层给隐藏起来
+            citySelectPanel.hide();
+        }
+    })
+</script>
+</body>
+</html>

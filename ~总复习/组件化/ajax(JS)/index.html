@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>JS原生的AJAX</title>
+    <script src="index.js"></script>
+    <style>
+        th {
+            width: 100px;
+            background-color: lightblue;
+        }
+        td {
+            width: 100px;
+            background-color: lightpink;
+        }
+    </style>
+</head>
+<body>
+    <table id="table">
+        <tbody id="tbody">
+        <tr>
+            <th>职业</th>
+            <th>名</th>
+            <th>姓</th>
+            <th>特长</th>
+            <button id="getJson">获取数据</button>
+        </tr>
+        </tbody>
+
+    </table>
+<!--    <script>
+        var xhr = new XMLHttpRequest;
+        xhr.open('get','../package.json');
+        xhr.send(null);
+        xhr.onreadystatechange=function () {
+            if (xhr.status==200&&xhr.readyState==4) {
+                console.log(xhr.responseText);
+            }
+        }
+    </script>-->
+    <script>
+        var btn = document.getElementById('getJson');
+        var table = document.getElementById('table');
+        var tbody = document.getElementById('tbody');
+        btn.addEventListener('click',function(){
+            var json;
+            var ajaxdata  = new setAjax({
+                url:'../package.json',
+                type:'get',
+                callback:function (data) {
+                    setHtml(data);
+                }
+            })
+        })
+        function setHtml(data){
+           var data = JSON.parse(data),str='';
+            for(var i=0;i<data['programmers'].length;i++){
+                 str+=" "+"<tr><td>programmers</td>"+
+                         "<td>"+data['programmers'][i]['firstName']+"</td>" +
+                         "<td>"+data['programmers'][i]['lastName']+"</td>" +
+                         "<td>"+data['programmers'][i]['language']+"</td></tr>";
+//                console.log(data['programmers'][i]['firstName']+":"+data['programmers'][i]['lastName']+":"+data['programmers'][i]['language']);
+            }
+            tbody.innerHTML=str;
+        }
+    </script>
+</body>
+</html>

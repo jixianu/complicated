@@ -1,0 +1,26 @@
+上传网站:
+1.配置path环境变量 我的电脑的高级配置环境变量里的path写成项目路径
+2.文件路径里打cmd  echo "# weijinsuo" >> README.md
+3.文件路径里打cmd  git init
+3.文件路径里打cmd  git add .
+4.文件路径里打cmd  git commit -m "first commit"
+5.文件路径里打cmd  git remote add origin https://github.com/jixianu/jixianu.git
+6.文件路径里打cmd  git push -u origin master
+
+
+托管项目:文件路径里打cmd  
+1.git branch gh-pages  需要创建一个新的分支
+2.git checkout gh-pages  切换到gh-pages分支 输入
+3.git push -u origin gh-pages 把本地源文件代码提交给gh-pages分支
+
+
+托管访问地址:https://jixianu.github.io/
+在setting里可查看地址
+
+
+github已有代码，不可以直接覆盖，两种选择：
+1.强推，即利用强覆盖方式用你本地的代码替代git仓库内的内容
+git push --all -f
+2.先把git的东西fetch到你本地然后merge后再push
+$ git config branch.master.remote origin  
+$ git config branch.master.merge refs/heads/master  

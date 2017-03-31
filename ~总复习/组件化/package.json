@@ -1,0 +1,28 @@
+{ "programmers": [
+
+  { "firstName": "Brett", "lastName":"McLaughlin", "language": "JavaScript" },
+
+  { "firstName": "Jason", "lastName":"Hunter", "language": "Java" },
+
+  { "firstName": "Elliotte", "lastName":"Harold", "language": "PHP" }
+
+  ],
+
+  "authors": [
+
+    { "firstName": "Isaac", "lastName": "Asimov", "genre": "science fiction" },
+
+    { "firstName": "Tad", "lastName": "Williams", "genre": "fantasy" },
+
+    { "firstName": "Frank", "lastName": "Peretti", "genre": "christian fiction" }
+
+  ],
+
+  "musicians": [
+
+    { "firstName": "Eric", "lastName": "Clapton", "instrument": "guitar" },
+
+    { "firstName": "Sergei", "lastName": "Rachmaninoff", "instrument": "piano" }
+
+  ] }
+

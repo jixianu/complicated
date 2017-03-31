@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="vue.js"></script>
+    <title></title>
+</head>
+<body>
+    <div id="app">
+        <button v-on:click="say('hello')">打招呼</button>
+    </div>
+</body>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        methods:{
+            say:function (msg,event) {
+                console.log(msg)
+//                event.preventDefault()
+            }
+        }
+    })
+</script>
+</html>

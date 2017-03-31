@@ -1,0 +1,5 @@
+﻿文件下载网址  =>  文件保存路径
+http://c.csdnimg.cn/comm_ask/images/ph_pop_err_icon.fw.png  =>  D:\4.14前端课堂所需软件最新版\扒网站\look\单页扒站小工具\blog.csdn.net\images\ph_pop_err_icon.fw.png
+http://static.blog.csdn.net/skin/default/images/commentsbarbg.jpg  =>  D:\4.14前端课堂所需软件最新版\扒网站\look\单页扒站小工具\blog.csdn.net\images\commentsbarbg.jpg
+http://c.csdnimg.cn/comm_ask/css/images/progress-dots.gif  =>  D:\4.14前端课堂所需软件最新版\扒网站\look\单页扒站小工具\blog.csdn.net\images\progress-dots.gif
+http://static.blog.csdn.net/images/ico_douban.gif  =>  D:\4.14前端课堂所需软件最新版\扒网站\look\单页扒站小工具\blog.csdn.net\images\ico_douban.gif

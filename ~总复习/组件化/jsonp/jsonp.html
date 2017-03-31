@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>跨域JSONP</title>
+</head>
+<body>
+<script>
+    var count=0;
+    function getJsonp(url,callback){
+        //每一次调用getJsonp函数都会生成一个新的函数名
+        var fnName = "__jsonp__"+count++;
+        //全局函数,在数据返回调用的时候
+
+
+        var scriptEle = document.createElement('script');
+        var newUrl = url.replace('JSONP_CALLBACK',fnName);
+        scriptEle.src=newUrl;
+        document.body.appendChild(scriptEle);
+
+        window[fnName] =function (data) {
+            callback(data);
+            document.body.removeChild(scriptEle);
+        }
+    }
+
+    getJsonp("http://study.com/jsonp1.js?callback=JSONP_CALLBACK",function(data){
+        console.log(data);
+    })
+    getJsonp("http://study.com/jsonp2.js?callback=JSONP_CALLBACK",function(data){
+        console.log(data);
+    })
+</script>
+</body>
+</html>

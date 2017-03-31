@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="vue.js"></script>
+    <title></title>
+</head>
+<body>
+<ul id="app">
+    <li v-for='item in items'>
+        {{parent}}--{{$index+1}}--{{item.message}}
+    </li>
+</ul>
+</body>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            parent:'parentMessage',
+            items:[
+                {message:'这是一个li1'},
+                {message:'这是一个li2'},
+                {message:'这是一个li3'},
+                {message:'这是一个li4'}
+            ]
+        }
+    })
+</script>
+</html>

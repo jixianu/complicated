@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="example">
+        <my-component></my-component>
+    </div>
+</body>
+<script>
+    //定义
+    var Mycomponent = Vue.extend({
+        template:'<div>A custom component</div>'
+    })
+    //注册
+    Vue.component('my-component',Mycomponent)
+
+    //创建实例
+    new Vue({
+        el:'#example'
+    })
+
+    // 在一个步骤中扩展与注册
+    Vue.component('my-component', {
+        template: '<div>A custom component!</div>'
+    })
+
+    // 局部注册也可以这么做
+    var Parent = Vue.extend({
+        components: {
+            'my-component': {
+                template: '<div>A custom component!</div>'
+            }
+        }
+    })
+</script>
+</html>
